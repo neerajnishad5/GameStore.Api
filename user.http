@@ -1,0 +1,72 @@
+# LOGIN USER
+
+POST  http://localhost:5050/users/login
+Content-Type: application/json
+
+{
+  "Email": "john.smith@example.com",
+  "Password": "JohnSecure456"
+}
+###
+
+
+# GET ALL USERS
+GET http://localhost:5050/users
+
+
+###
+
+# GET USER BY ID
+GET http://localhost:5050/users/9
+
+###
+
+# SIGN UP
+POST http://localhost:5050/users/signup
+Content-Type: application/json
+
+{
+  "username": "deepak_chopra",
+  "firstName": "Deepak",
+  "middleName": "R.",
+  "lastName": "Chopra",
+  "email": "deepak.chopra@example.com",
+  "password": "DeepakSecure456"
+}
+
+###
+
+# UPDATE USER BY ID
+
+PUT http://localhost:5050/users/9
+Content-Type: application/json
+
+{
+    "Username": "bill_bottm",
+    "FirstName": "bill",
+    "MiddleName": "A.",
+    "LastName": "bottom",
+    "Email": "bill@bill.com",
+    "Password": "RajSecure789"
+    
+}
+
+
+###
+# DELETE USER BY ID
+
+DELETE  http://localhost:5050/users/9
+
+###
+
+# LOGIN USER
+
+POST  http://localhost:5050/users/login/
+Content-Type: application/json
+
+{
+  "Email": "john.smith@example.com",
+  "Password": "JohnSecure456"
+}
+
+###

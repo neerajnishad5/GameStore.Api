@@ -1,0 +1,36 @@
+# Visual Studio Code
+.vscode/
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userprefs
+
+# ASP.NET Core
+wwwroot/lib/
+wwwroot/css/
+wwwroot/js/
+
+# NuGet packages
+*.nupkg
+packages/
+*.snupkg
+
+# Publish directory
+publish/
+
+# Logs
+*.log
+
+# Other
+*.db
+*.sqlite
+.env
+
+notes.txt

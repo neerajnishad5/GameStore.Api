@@ -1,0 +1,4 @@
+
+# GENRES ENDPOINTS
+
+GET http://localhost:5050/genres

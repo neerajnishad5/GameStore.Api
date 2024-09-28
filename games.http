@@ -1,0 +1,43 @@
+
+# Get list of all games
+GET http://localhost:5050/games
+
+###
+
+# Get the game by ID 
+GET http://localhost:5050/games/2
+
+
+###
+
+# Add a game to games list
+POST http://localhost:5050/games
+Content-Type: application/json
+
+{
+  "name": "",
+  "genreId": 5,
+  "price": 22.99,
+  "releaseDate": "2001-03-03"
+}
+
+###
+
+// Update the game by ID
+PUT http://localhost:5050/games/5
+Content-Type: application/json
+
+{
+  "name": "GTA San Andreas",
+  "genreId": 3,
+  "price": 66.99,
+  "releaseDate": "2022-03-03"
+}
+
+###
+
+# Delete the game by ID
+DELETE http://localhost:5050/games/2
+
+
+###
