@@ -3,6 +3,7 @@ using GameStore.Api.Data;
 using GameStore.Api.EndPoints;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +37,13 @@ builder.Services.AddAuthorization(options =>
 
 builder.Services.AddEndpointsApiExplorer();
 // builder.Services.AddSwaggerGen();
+
+Log.Logger = new LoggerConfiguration()
+                            // add console as logging target
+                            .WriteTo.Console()
+                            // set default minimum level
+                            .MinimumLevel.Debug()
+                            .CreateLogger();
 
 
 // getting the connection string from the appSettings.json file stored inside configuration object
