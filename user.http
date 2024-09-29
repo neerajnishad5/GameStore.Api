@@ -4,20 +4,19 @@ POST  http://localhost:5050/users/login
 Content-Type: application/json
 
 {
-  "Email": "john.smith@example.com",
-  "Password": "JohnSecure456"
+  "Email": "sofia.garcia@example.com",
+  "Password": "Neeraj@123"
 }
-###
 
+###
 
 # GET ALL USERS
 GET http://localhost:5050/users
 
-
 ###
 
 # GET USER BY ID
-GET http://localhost:5050/users/9
+GET http://localhost:5050/users/2
 
 ###
 
@@ -26,12 +25,12 @@ POST http://localhost:5050/users/signup
 Content-Type: application/json
 
 {
-  "username": "deepak_chopra",
-  "firstName": "Deepak",
-  "middleName": "R.",
-  "lastName": "Chopra",
-  "email": "deepak.chopra@example.com",
-  "password": "DeepakSecure456"
+    "Username": "sofia_garcia",
+    "FirstName": "Sofia",
+    "MiddleName": "M.",
+    "LastName": "Garcia",
+    "Email": "sofia.garcia@example.com",
+    "Password": "Neeraj@123"
 }
 
 ###
@@ -65,8 +64,6 @@ POST  http://localhost:5050/users/login/
 Content-Type: application/json
 
 {
-  "Email": "john.smith@example.com",
-  "Password": "JohnSecure456"
+  "Email": "jason.blue@example.com",
+  "Password": "JasonSecure456"
 }
-
-###

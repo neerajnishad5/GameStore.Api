@@ -29,5 +29,7 @@ public record class UserDto(
     [StringLength(100, MinimumLength = 8)]  // Password must be between 8 and 100 characters
     [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$", 
         ErrorMessage = "Password must have at least 1 lowercase, 1 uppercase letter, and 1 digit.")]
-    string Password
+    string Password,
+
+    string? Role    
 );

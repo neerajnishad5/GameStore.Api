@@ -1,14 +1,16 @@
 using System.Security.Cryptography;
-
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using Microsoft.IdentityModel.Tokens;
 namespace GameStore.Api.Services;
 
 public enum PasswordVerificationResult {
     Failed, Success, SuccessRehashNeeded
 }
 
-public class UserService {
+public static class UserService {
     private const byte VersionId1 = 0x01;
-    private const byte DefaultVersionId = VersionId1;
+    private const byte DefaultVersionId = VersionId1; 
 
     // Defines versions for password hashing
     private static readonly Dictionary<byte, PasswordHasherVersion> Versions = new() {
