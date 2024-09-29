@@ -23,5 +23,8 @@ public record class UpdateUserDto(
     string Email,
 
     [StringLength(100, MinimumLength = 6, ErrorMessage = "Password must be between 6 and 100 characters.")]
-    string Password
+    string Password,
+
+    [RegularExpression("^(user|admin)$", ErrorMessage = "Role must be either 'user' or 'admin'.")]
+    string Role
 );

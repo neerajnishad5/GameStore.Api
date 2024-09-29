@@ -7,5 +7,6 @@ public record class CreateUserDto
     string? MiddleName,
     string LastName, 
     string Email,
-    string Password
+    string Password,
+    string? Role
 );

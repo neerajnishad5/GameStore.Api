@@ -3,8 +3,11 @@ using GameStore.Api.Dtos;
 using GameStore.Api.Mapping;
 using GameStore.Api.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SQLitePCL;
 namespace GameStore.Api.EndPoints;
+
 
 public static class UserEndpoints
 {
@@ -17,7 +20,7 @@ public static class UserEndpoints
     {
       var users = await dbContext.Users.Select(user => user).AsNoTracking().ToListAsync();
       return Results.Ok(users); // Return 200 OK with the list of users
-    }).WithTags("Users"); // Get all users
+    }); // Get all users 
 
     // Get user by Id
     group.MapGet("/{id:int}", async (int id, GameStoreContext dbContext) =>
@@ -95,9 +98,11 @@ public static class UserEndpoints
         return Results.Unauthorized(); // Return 401 if password verification failed
       }
 
+    var token = TokenService.GenerateToken(user.Username);
+
       // If password verification succeeded, return a success response
-      return Results.Ok(new { Message = "Login successful" });
-    }).WithTags("Auth").AllowAnonymous(); // User login
+      return Results.Ok(new { Message = "Login successful!", token = token  });
+    }); // User login
 
 
     group.MapPost("/signup", async (CreateUserDto newUser, GameStoreContext dbContext) =>

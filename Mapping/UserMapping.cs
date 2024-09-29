@@ -15,7 +15,8 @@ public static class UserMapping
             LastName = user.LastName,
             MiddleName = user.MiddleName!,
             Email = user.Email,
-            Password = user.Password
+            Password = user.Password,
+            Role = user.Role!
         };
     }
 
@@ -29,8 +30,8 @@ public static class UserMapping
             LastName = user.LastName,
             MiddleName = user.MiddleName!,
             Email = user.Email,
-            Password = user.Password
-
+            Password = user.Password,
+            Role = user.Role,
         };
     }
 

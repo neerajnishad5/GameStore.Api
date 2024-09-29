@@ -8,9 +8,9 @@ public class GameStoreContext(DbContextOptions < GameStoreContext > options): Db
 
   // DbSet is an obj that can be used to read & save instances of below types to DB
 
-  public DbSet < Game > Games => Set < Game > (); // here Set<Game>(); is creating our DB set instance 
-  public DbSet < Genre > Genres => Set < Genre > ();
-  public DbSet < User > Users => Set < User > ();
+  public DbSet < Game > Games {get; set;} // here Set<Game>(); is creating our DB set instance 
+  public DbSet < Genre > Genres {get; set;}
+  public DbSet<User> Users { get; set; }
 
   // method will be executed as soon as we execute the migration
   // here we're populating the Genres as it's static data & not changed frequently
@@ -41,7 +41,8 @@ public class GameStoreContext(DbContextOptions < GameStoreContext > options): Db
           MiddleName = "A.",
           LastName = "Doe",
           Email = "john.doe@example.com",
-          Password = "SecurePassword123"
+          Password = "SecurePassword123",
+          Role = "admin"
       });
 
   }
